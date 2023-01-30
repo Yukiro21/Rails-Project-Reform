@@ -1,0 +1,4 @@
+<%= turbo_stream.update("flash", partial: "shared/flash") %>
+<%= turbo_stream.append("users-list", partial: "users/user", locals: { user: @user }) %>
+<%= turbo_stream.update("users-count", partial: "users/count", locals: { users: @users }) %>
+<%= turbo_stream.update("user-form", partial: "users/form", locals: { user: user.new }) %>

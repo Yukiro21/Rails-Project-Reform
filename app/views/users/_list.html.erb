@@ -1,0 +1,19 @@
+<table class="user-table">
+  <thead>
+    <tr class="w-full">
+      <th class="text-left">ID</th>
+      <th class="text-left">Username</th>
+      <th class="text-left">Email</th>
+      <th class="text-left">Password</th>
+      <th class="text-center" colspan="2">Actions</th>
+    </tr>
+  </thead>
+  <tbody id="users-list" data-controller="users" data-action="">
+  <% users.each do |user| %>
+    <%= render partial: "user", locals: { user: user }  %>
+  <% end %>
+  </tbody>
+</table>
+<div class="text-wrapper" id="users-count">
+  <%= render partial: "count", locals: { users: users } %>
+</div>

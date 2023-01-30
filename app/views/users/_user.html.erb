@@ -1,0 +1,8 @@
+<tr id="<%= dom_id(user) %>" data-stream-enter-class="animate-item-in" data-stream-exit-class="animate-item-out">
+  <td><%= user.id %></td>
+  <td><%= link_to user.username, user_path(user), data: { turbo_frame: "_top" } %></td>
+  <td><%= user.email %></td>
+  <td><%= user.password %></td>
+  <td><%= link_to "Edit", edit_user_path(user), class: "edit-btn", data: { turbo_frame: "_top" } %></td>
+  <td><%= button_to "Delete", user_path(user), method: :delete, class: "delete-btn" %></td>
+</tr>

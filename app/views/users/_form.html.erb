@@ -1,0 +1,39 @@
+
+
+<%= form_for user do |form| %>
+  <% if user.errors.any? %>
+    <div class="error-container" style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-wrapper">
+    <div class="fields">
+      <%= form.label :username, style: "display: block" %>
+      <%= form.text_field :username, placeholder:"Enter Username"  %>
+    </div>
+
+    <div class="fields">
+      <%= form.label :email, style: "display: block" %>
+      <%= form.email_field :email, placeholder:"arlynda@example.com" %>
+    </div>
+
+    <div class="fields">
+      <%= form.label :password, style: "display: block" %>
+      <%= form.password_field :password, placeholder:"Enter Password"  %>
+    </div>
+
+    <div class="fields">
+      <%= form.submit %>
+      <%# if edit page show the back button  and redirect to root path%>
+      <% if action_name == "edit" %>
+        <%= link_to "Back", root_path, class: "back-btn" %>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>
